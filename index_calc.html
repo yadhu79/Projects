@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div>
+            <label for="num1">FirstNumber</label>
+            <input type="text" id="num1"><br><br>
+
+            <label for="num2">SecondNumber</label>
+            <input type="text" id="num2"><br><br>
+
+            <label for="operators">Select Operator</label>
+            <select id="operators">
+                <option value="add">+</option>
+                <option value="sub">-</option>
+                <option value="div">/</option>
+                <option value="mul">*</option>
+            </select><br><br>
+
+            <label for="Result">Result</label>
+            <button onclick="calculate();">=</button>
+            <input type="text" id="result">
+
+    </div>
+
+<script>
+
+    var n1;
+    var n2;
+    var oper;
+
+    function calculate(){
+        n1 = parseInt(document.getElementById('num1').value);
+        n2 = parseInt(document.getElementById('num2').value);
+
+        oper = document.getElementById('operators').value;
+
+        if(oper === 'add'){
+                                addition(n1,n2);
+             }
+        else if(oper === 'sub') {
+                                subtract(n1,n2);
+             }
+        else if(oper === 'div') {
+                                divide(n1,n2);
+             }
+        else if(oper === 'mul') {
+                                multiply(n1,n2);
+             }
+        else {
+            document.getElementById('result') = '#';
+             }   
+    }
+
+    function addition(n1,n2){
+        var a = n1 + n2;
+        print(a);
+    }
+    function subtract(n1,n2){
+        var a = n1 - n2;
+        print(a);
+        
+    }
+    function divide(n1,n2){
+        var a = n1 / n2;
+        print(a);
+        
+    }
+    function multiply(n1,n2){
+        var a = n1 * n2;
+        print(a);   
+    }
+    function print(a){
+        document.getElementById('result').value = a;  
+    }
+</script>
+
+
+</body>
+</html>
